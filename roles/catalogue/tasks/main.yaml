@@ -1,0 +1,46 @@
+- name: app setup   #Only this task will be executed because we mentioned tags label 
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: app-setup.yaml
+  tags:
+  - deployment  # We can mention any name under tag label
+    
+- name: nodejs setup  #Only this task will be executed because we mentioned tags
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: nodejs.yaml
+  tags:
+  - deployment
+
+- name: copy mongo repo
+  ansible.builtin.copy:
+    src: mongo.repo
+    dest: /etc/yum.repos.d/mongo.repo
+
+- name: install mongodb client
+  ansible.builtin.package:
+    name: mongodb-mongosh
+    state: present
+
+- name: connnect to mongodb catalogue
+  ansible.builtin.command: mongosh {{ MONGODB_HOST }}.icu --quiet --eval "db.getMongo().getDBNames().indexOf('catalogue')"
+  register: catalogue_output
+
+- name: load products into mongodb
+  ansible.builtin.shell: mongosh --host {{ MONGODB_HOST }} </app/db/master-data.js
+  when: catalogue_output.stdout | int < 0
+
+- name: daemon reload enable and start
+  ansible.builtin.systemd_service:
+    name: catalogue
+    enabled: true
+    state: started
+    daemon_reload: true
+
+- name: nodejs setup
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: system-setup.yaml
+  tags:
+  - deployment
+  

@@ -1,0 +1,3 @@
+# meta folder states that this catalogue folder is dependent on the common folder..
+dependencies:
+  - role: common

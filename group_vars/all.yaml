@@ -1,0 +1,9 @@
+MONGODB_HOST: mongodb.sindhuworld.icu
+REDIS_HOST: redis.sindhuworld.icu
+CATALOGUE_HOST: catalogue.sindhuworld.icu
+CART_HOST: cart.sindhuworld.icu
+MYSQL_HOST: mysql.sindhuworld.icu
+USER_HOST: user.sindhuworld.icu
+RABBITMQ_HOST: rabbitmq.sindhuworld.icu
+SHIPPING_HOST: shipping.sindhuworld.icu
+PAYMENT_HOST: payment.sindhuworld.icu
