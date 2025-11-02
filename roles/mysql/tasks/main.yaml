@@ -3,6 +3,14 @@
     name: mysql-server
     state: present
 
+- name: install python dependencies
+  ansible.builtin.pip:
+    name: 
+      - botocore
+      - boto3
+    state: present 
+
+
 - name: start and enable mysql
   ansible.builtin.service:
     name: mysqld
