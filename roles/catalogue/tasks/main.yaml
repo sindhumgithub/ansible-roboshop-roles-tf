@@ -30,11 +30,11 @@
   ansible.builtin.shell: mongosh --host {{ MONGODB_HOST }} </app/db/master-data.js
   when: catalogue_output.stdout | int < 0
 
-- name: enable and start catalogue service
-  ansible.builtin.systemd_service:
-    name: catalogue
-    enabled: true
-    state: started
+# - name: enable and start catalogue service
+#   ansible.builtin.systemd_service:
+#     name: catalogue
+#     enabled: true
+#     state: started
 
 - name: nodejs setup
   ansible.builtin.import_role:
