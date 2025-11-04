@@ -1,4 +1,4 @@
-MONGODB_HOST: mongodb.{{ env }}.sindhuworld.icu  #mongodb-dev.sindhuworld.icu
+MONGODB_HOST: mongodb-{{ env }}.sindhuworld.icu  #mongodb.dev.sindhuworld.icu
 REDIS_HOST: redis-{{ env }}.sindhuworld.icu
 CATALOGUE_HOST: catalogue-{{ env }}.sindhuworld.icu
 CART_HOST: cart-{{ env }}.sindhuworld.icu

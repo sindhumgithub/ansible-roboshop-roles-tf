@@ -1,1 +1,1 @@
-MONGODB_HOST: mongodb.{{ env }}.sindhuworld.icu
+MONGODB_HOST: mongodb-{{ env }}.sindhuworld.icu
