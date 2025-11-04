@@ -40,7 +40,7 @@
 - name: nodejs setup
   ansible.builtin.import_role:
     name: common
-    tasks_from: system-setup.yaml
+    tasks_from: systemsetup.yaml
   tags:
   - deployment
   
