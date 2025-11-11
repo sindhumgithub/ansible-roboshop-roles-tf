@@ -1,9 +1,9 @@
 MONGODB_HOST: mongodb-{{ env }}.sindhuworld.icu  #mongodb.dev.sindhuworld.icu
 REDIS_HOST: redis-{{ env }}.sindhuworld.icu
-CATALOGUE_HOST: catalogue-{{ env }}.sindhuworld.icu
-CART_HOST: cart-{{ env }}.sindhuworld.icu
+CATALOGUE_HOST: catalogue.backend-alb-{{ env }}.sindhuworld.icu
+CART_HOST: cart.backend-alb-{{ env }}.sindhuworld.icu
 MYSQL_HOST: mysql-{{ env }}.sindhuworld.icu
-USER_HOST: user-{{ env }}.sindhuworld.icu
+USER_HOST: user.backend-alb-{{ env }}.sindhuworld.icu
 RABBITMQ_HOST: rabbitmq-{{ env }}.sindhuworld.icu
-SHIPPING_HOST: shipping-{{ env }}.sindhuworld.icu
-PAYMENT_HOST: payment-{{ env }}.sindhuworld.icu
+SHIPPING_HOST: shipping.backend-alb-{{ env }}.sindhuworld.icu
+PAYMENT_HOST: payment.backend-alb-{{ env }}.sindhuworld.icu
